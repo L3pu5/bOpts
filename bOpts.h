@@ -1,8 +1,5 @@
 #include <string>
 #include <map>
-#include <typeinfo>
-#include <ios>
-#include <iostream>
 #include <vector>
 
 // 
@@ -114,37 +111,4 @@ std::string GetFloatingOpt(int _index){
     if(_index >= bOpts_FLOATINGCOUNT)
         throw dOptException("GetFloatingOpt(" + std::to_string(_index) + "): _index = " + std::to_string(_index) + " not found.");
     return bOpts_MAP["Floating_" + std::to_string(_index)];
-}
-
-
-//TestCase: .\bOpts.exe -F Fswitch -E eSwitch floating1 -K kswitch floating2 floating3 last_3 last_2 last_1
-//Should output: 
-// eSwitch                                                                                                                                             kswitch
-// floating3
-// -E
-// last_3
-// last_2
-// last_1
-// floating2
-// floating3
-// last_3
-// last_2
-// last_1
-int main(int argc, char * argv[]){
-    SetOpts("Fireworks", std::vector<std::string> {"F", "K"});
-    MakeOpts(argc, argv);
-    printf("%s\n", GetOpt("E").c_str());
-    printf("%s\n", GetOpt("Fireworks").c_str());
-    printf("%s\n", GetFloatingOpt(2).c_str());
-    printf("%s\n", GetOpt(2, true).c_str());
-    printf("%s\n", GetOpt(2, false).c_str());
-    printf("%s\n", GetOpt(1, false).c_str());
-    printf("%s\n", GetOpt(0, false).c_str());
-    printf("%s\n", GetFloatingOpt(1).c_str());
-    printf("%s\n", GetFloatingOpt(2).c_str());
-    printf("%s\n", GetFloatingOpt(3).c_str());
-    printf("%s\n", GetFloatingOpt(4).c_str());
-    printf("%s\n", GetFloatingOpt(5).c_str());
-    printf("%s\n", GetFloatingOpt(6).c_str());
-    return 0;
 }
