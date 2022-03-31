@@ -7,6 +7,7 @@
 //      By L3pu5, L3pu5_Hare, Lepus Hare.
 
 namespace bOpts{
+    
     int bOpts_FLOATINGCOUNT = 0;
     int bOpts_FLAGCOUNT = 0;
     std::map <std::string, std::string> bOpts_MAP = std::map<std::string, std::string>();
