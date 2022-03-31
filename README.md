@@ -5,6 +5,9 @@
 
  Parses command line options.
 
+Namespace:
+    bOpts
+
 Usage:
     SetOpts(flag, variants) //Allows for the defining of collapsing multiple opts into 1 opt.
                             // ie: SetOpts("f", {"fix", "fixes", "fi"})
