@@ -18,6 +18,11 @@ Usage:
     bOpts::SetOpts(flag, variants) //Allows for the defining of collapsing multiple opts into 1 opt.
                             // ie: SetOpts("f", {"fix", "fixes", "fi"})
                             // will collapse -f, -fix -fixes -fi into 1 value;
+    bOpts::SetToggleOpts(toggles)  //Allows for 'true' 'false' switches.
+                                   //  ie: SetToggleOpts({"X", "Y"})
+                                   // will allow -X 
+                                   // and will GetToggleOpt("X") -> 1
+                                   // GetToggleOpt("Y") -> 0
 
     bOpts::MakeOpts(argc, argv);   //Allows for the usage of the following commands.
 
@@ -27,8 +32,10 @@ Usage:
     bOpts::GetOpt(n, head=true);   //For a positive integer n and an optional bool 'head':
                             // if head  : return argv[n-1]
                             // else     : return argv[argc-n-1]
-                            // ie: GetOpt(0, false) returns the last option. 
+                            // ie: GetOpt(0, false) returns the last option.
     bOpts::GetFloatingOpt(n);      //Returns the nth opt that is not preceeded directly by a switch.
+    bOpts::GetToggleOpt("X");**    //Returns 0/1,F/T for a switch "X" whether or not it was passed as an arg.
+                                   // ** Requires SetToggleOpts({}) to be supplied before MakeOpts();
 
 
 TODO:
