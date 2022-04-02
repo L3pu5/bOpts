@@ -7,6 +7,7 @@
 
 // 
 // bOpts: Bunny command parsing.
+//      https://github.com/L3pu5/bOpts
 //      By L3pu5, L3pu5_Hare, Lepus Hare.
 
 int bOpts_FLOATINGCOUNT = 0;
